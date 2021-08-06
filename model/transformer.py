@@ -68,7 +68,7 @@ def make_batch_new(sentences):
     """
     sen_vect = []
     eos_vec = [0 for _ in range(256)]
-    model = gensim.models.Word2Vec.load('word2vec_opencc.model')
+    model = gensim.models.Word2Vec.load('model/word2vec_opencc.model')
     for sen in sentences:
         sen = sen.split(' ')
         for s in sen:

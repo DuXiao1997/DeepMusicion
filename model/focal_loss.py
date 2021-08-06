@@ -32,7 +32,7 @@ def read_file():
     file_cla = ['快乐','悲伤','轻松']
     for cla in file_cla:
         # filepath = 'lyrics_text/lyrics_new_'+cla+'_0.2.txt'
-        filepath = 'lyrics_text/lyrics_' + cla + '.txt'
+        filepath = 'data/lyrics_' + cla + '.txt'
         with open(filepath,'r',encoding='utf-8') as f:
             contents = f.readlines()
         for con in contents:
@@ -44,7 +44,7 @@ def read_file():
                 target.append(2)
             con = con.strip().replace('\n','')
             res.append(con)
-    with open('lyrics_text/lyrics_new_愤怒_0.2.txt',encoding='utf-8') as f:
+    with open('data/lyrics_new_愤怒_0.2.txt',encoding='utf-8') as f:
         contents = f.readlines()
     # print(res)
     for con in contents:
@@ -65,7 +65,7 @@ def make_batch_new(sentences):
     """
     sen_vect = []
     eos_vec = [0 for _ in range(256)]
-    model = gensim.models.Word2Vec.load('word2vec_opencc.model')
+    model = gensim.models.Word2Vec.load('model/word2vec_opencc.model')
     for sen in sentences:
         sen = sen.split(' ')
         for s in sen:
